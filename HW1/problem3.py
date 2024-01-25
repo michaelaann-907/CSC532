@@ -1,4 +1,7 @@
 
+
+print("\nInsertion-Sort Algorithm")
+
 # Insertion-Sort Algorithm
 def insertion_sort(a):
     # Iterate through each element in the array starting from the second element
@@ -40,18 +43,58 @@ print("Sorted Array 3:", a3)
 
 
 
-
-
+print("\n-----\n\nMerge & Merge-Sort Algorithm")
 
 # Merge Algorithm
+def merge(a, p, q, r):
+    # calculate the size of the two arrays to be merged
+    n1 = q - p + 1
+    n2 = r - q
 
+    # create temporary arrays
+    left = a[p:p + n1]
+    right = a[q + 1: q + 1 + n2]
+
+    # add sentinel values to the end of booth temporary arrays
+    left.append(float('inf'))
+    right.append(float('inf'))
+
+    i = j = 0
+
+    # merge the two back into original array
+    for k in range(p, r + 1):
+        if left[i] <= right[j]:
+            a[k] = left[i]
+            i += 1
+        else:
+            a[k] = right[j]
+            j += 1
 
 
 
 
 # Merge - Sort Algorithm
+def merge_sort(a, p, r):
+    # recursion "bottoms out" when sequence has length 1
+    if p < r:
+        # calculate middle index
+        q = (p + r) // 2
+
+        # recursive calls to sort the two halves
+        merge_sort(a, p, q)
+        merge_sort(a, q+1, r)
+
+        # merge the two sorted halves
+        merge(a, p, q, r)
 
 
+# Testing merge & merge_sort Algorithms
+a = [5,7,4,12,15,2,3,1,0,9,14]
+print("Before merge-sort: ", a)
+# call merge_sort to sort array
+merge_sort(a, 0, len(a) - 1)
+# print sorted array
+print("After merge-sort: ", a)
 
 
 
