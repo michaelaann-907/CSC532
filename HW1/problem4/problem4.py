@@ -59,7 +59,6 @@ def main():
     print(aList)
     print(maxSubarrayBruteForce(aList))
     print(maxCrossingSubarrayBook(aList, 0, (len(aList) - 1) // 3, len(aList) - 1))
-    #print(find_max_subarray_book(aList, 0, len(aList) - 1))
 
     for i in range(100, 10001, 500):
         list2 = []
