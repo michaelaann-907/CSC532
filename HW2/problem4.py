@@ -70,3 +70,49 @@ def merge(arr, l, m, r):
         arr[k] = R[j]
         j += 1
         k += 1
+
+
+# Mergesort function to sort the array
+def mergesort(arr, l, r):
+    if l < r:
+        m = (l + (r - 1)) // 2  # Calculate the middle index
+
+        # Recursively sort the two halves
+        mergesort(arr, l, m)
+        mergesort(arr, m + 1, r)
+        # Merge the sorted halves
+        merge(arr, l, m, r)
+
+
+# Heapsort function to sort the array
+def heapsort(arr):
+    # Heapify the array
+    def heapify(arr, n, i):
+        largest = i
+        l = 2 * i + 1  # Left child index
+        r = 2 * i + 2  # Right child index
+
+        # If left child exists and is larger than root
+        if l < n and arr[i] < arr[l]:
+            largest = l
+
+        # If right child exists and is larger than largest so far
+        if r < n and arr[largest] < arr[r]:
+            largest = r
+
+        # If largest is not root
+        if largest != i:
+            arr[i], arr[largest] = arr[largest], arr[i]  # Swap
+            heapify(arr, n, largest)  # Heapify the affected sub-tree
+
+    n = len(arr)
+
+    # Build a max heap
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # Extract elements from heap one by one
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # Swap
+        heapify(arr, i, 0)
+
