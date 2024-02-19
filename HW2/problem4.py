@@ -116,3 +116,57 @@ def heapsort(arr):
         arr[i], arr[0] = arr[0], arr[i]  # Swap
         heapify(arr, i, 0)
 
+
+# Function to test sorting algorithms
+def test_sorting_algorithm(algorithm, array_sizes):
+    results = []  # Store results
+    for size in array_sizes:
+        arr = list(range(size))  # Create an array of specified size
+        random.shuffle(arr)  # Randomize array
+        start_time = timeit.default_timer()  # Start time measurement
+        if algorithm == heapsort:
+            algorithm(arr)  # Pass only the array to heapsort
+        else:
+            algorithm(arr, 0, len(arr) - 1)  # Pass array, low, and high to other sorting algorithms
+        end_time = timeit.default_timer()  # End time measurement
+        time_taken = end_time - start_time  # Calculate time taken
+        results.append((size, time_taken))  # Store size and time taken
+    return results  # Return results
+
+
+
+### Experiments Done ###
+# To run each one, you will have to comment out the other ones
+# while running one since they all share the same variable name.
+
+
+
+## General Experiment (Wid Range of Sizes)
+array_sizes = [10, 100, 1000, 10000, 100000]  # Specify array sizes for testing
+
+## Experiment 1 (Small Array Sizes)
+#array_sizes = [10, 50, 100, 200, 500]  # Small array sizes
+
+## Experiment 2 (Medium Array Sizes)
+#array_sizes = [100, 500, 1000, 5000, 10000]  # Medium array sizes
+
+## Experiment 3
+#array_sizes = [5000, 10000, 20000, 50000, 100000]  # Large array sizes
+
+
+
+
+# Test the algorithms
+quicksort_results = test_sorting_algorithm(quicksort, array_sizes)  # Test Quicksort
+mergesort_results = test_sorting_algorithm(mergesort, array_sizes)  # Test Mergesort
+heapsort_results = test_sorting_algorithm(heapsort, array_sizes)  # Test Heapsort
+
+# Print results in tabular format
+print("Array Size\tQuicksort (Random Pivot)\tMergesort\tHeapsort")
+for i in range(len(array_sizes)):
+    size = array_sizes[i]
+    quicksort_time = quicksort_results[i][1]
+    mergesort_time = mergesort_results[i][1]
+    heapsort_time = heapsort_results[i][1]
+    print(f"{size}\t{quicksort_time}\t{mergesort_time}\t{heapsort_time}")  # Print results
+
