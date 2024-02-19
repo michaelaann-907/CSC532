@@ -23,3 +23,50 @@ def partition(arr, low, high):
             arr[i], arr[j] = arr[j], arr[i]  # Swap arr[i] and arr[j]
     arr[i + 1], arr[high] = arr[high], arr[i + 1]  # Move pivot to its correct position
     return i + 1  # Return the index of the pivot element after partitioning
+
+
+# Quicksort function to sort the array
+def quicksort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)  # Get the partitioning index
+        quicksort(arr, low, pi - 1)  # Recursively sort elements before partition
+        quicksort(arr, pi + 1, high)  # Recursively sort elements after partition
+
+
+# Function to merge two subarrays for Mergesort
+def merge(arr, l, m, r):
+    n1 = m - l + 1  # Length of left subarray
+    n2 = r - m  # Length of right subarray
+
+    L = [0] * n1  # Create temporary arrays for left and right subarrays
+    R = [0] * n2
+
+    # Copy data to temporary arrays L[] and R[]
+    for i in range(n1):
+        L[i] = arr[l + i]
+    for j in range(n2):
+        R[j] = arr[m + 1 + j]
+
+    # Merge the temporary arrays back into arr[l..r]
+    i = j = 0  # Initial indexes of left and right subarrays
+    k = l  # Initial index of merged subarray
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            arr[k] = L[i]
+            i += 1
+        else:
+            arr[k] = R[j]
+            j += 1
+        k += 1
+
+    # Copy the remaining elements of L[], if any
+    while i < n1:
+        arr[k] = L[i]
+        i += 1
+        k += 1
+
+    # Copy the remaining elements of R[], if any
+    while j < n2:
+        arr[k] = R[j]
+        j += 1
+        k += 1
