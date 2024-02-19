@@ -170,3 +170,23 @@ for i in range(len(array_sizes)):
     heapsort_time = heapsort_results[i][1]
     print(f"{size}\t{quicksort_time}\t{mergesort_time}\t{heapsort_time}")  # Print results
 
+
+"""
+Testing large array values to see when QuickSort "bombs"
+
+def test_quicksort_performance(max_array_size):
+    array_size = 100
+    while array_size <= max_array_size:
+        arr = list(range(array_size))
+        random.shuffle(arr)
+        start_time = timeit.default_timer()
+        quicksort(arr, 0, len(arr) - 1)
+        end_time = timeit.default_timer()
+        time_taken = end_time - start_time
+        print(f"Array size: {array_size}, Time taken: {time_taken} seconds")
+        array_size *= 2
+
+# Test Quicksort performance
+max_array_size = 10**9  # Adjust as needed
+test_quicksort_performance(max_array_size)
+"""
