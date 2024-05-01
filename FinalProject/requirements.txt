@@ -1,0 +1,5 @@
+# Use command below to install requirements needed
+# pip install -r requirements.txt
+
+opencv-python
+pywavelets
