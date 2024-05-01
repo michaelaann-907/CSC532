@@ -1,0 +1,55 @@
+** Wavelet Compression Results
+- Black & White Image (BW.jpg)
+(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
+   Original Image Properties:
+    Dimensions: (2848, 4272)
+    Data type: uint8
+    File size: 380170 bytes
+    Mean pixel value: 76.45590933120818
+    Standard deviation: 64.54784389427883
+
+   Compressed Image Properties:
+    Dimensions: (533, 800)
+    Data type: uint8
+    File size: 97333248 bytes
+    Compression ratio: 25602.558855248968
+    Mean pixel value: 1.9305168324343347
+    Standard deviation: 6.856057836107548
+
+
+- Colored Image (CI.jpg)
+(Used cv2.IMREAD_COLOR since image is colored)
+   Original Image Properties:
+    Dimensions: (1200, 1200, 3)
+    Data type: uint8
+    File size: 163020 bytes
+    Mean pixel value: 82.64867777777778
+    Standard deviation: 68.11042121622599
+
+   Compressed Image Properties:
+    Dimensions: (600, 600, 4)
+    Data type: uint8
+    File size: 46080000 bytes
+    Compression ratio: 28266.47037173353
+    Mean pixel value: 3.466360763888889
+    Standard deviation: 11.671904581208475
+
+
+
+
+- Text Image (TI.jpg)
+(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
+   Original Image Properties:
+    Dimensions: (563, 1000)
+    Data type: uint8
+    File size: 19332 bytes
+    Mean pixel value: 229.76447602131438
+    Standard deviation: 75.01429267626348
+
+   Compressed Image Properties:
+    Dimensions: (451, 800)
+    Data type: uint8
+    File size: 4512000 bytes
+    Compression ratio: 23339.540657976413
+    Mean pixel value: 0.0
+    Standard deviation: 0.0
