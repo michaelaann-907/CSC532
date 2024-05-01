@@ -1,5 +1,7 @@
 from PIL import Image
 import io
+import numpy as np
+import os
 
 """
 Using functions inbuilt into Pillow, we can easily see JPEG image compression through any filetype, as long as
@@ -24,6 +26,7 @@ def compress_JPEG(inputImage, outputImage, imageQuality=85):
             compressed_img = Image.open(buffer)
             # Save the compressed image
             compressed_img.save(outputImage, 'JPEG')
+        return outputImage
 
 
 def decompress_JPEG(inputImage, outputImage):
@@ -35,20 +38,55 @@ def decompress_JPEG(inputImage, outputImage):
     """
     # Open the compressed image file we just compressed
     with Image.open(inputImage) as img:
-        # Save the image to the output path
-        img.save(outputImage, 'JPEG')
+        # Get the file format of the input image
+        img_format = img.format
+        # Save the image to the output path with the same format as input
+        img.save(outputImage, img_format)
+
+def get_image_properties(image_path):
+    with Image.open(image_path) as img:
+        image_array = np.array(img)
+        shape = img.size
+        dtype = image_array.dtype
+        size = os.path.getsize(image_path)
+        mean = np.mean(image_array)
+        std = np.std(image_array)
+    return shape, dtype, size, mean, std
 
 
 def main():
-    inputImage = 'mutpyInstallCommand.png'  # Path to the input image file
-    compressedImage = 'compressed.jpg'
+    inputImage = 'Images/TestingImages/TI2.png'  # Path to the input image file
+    compressedImage = 'Images/JPEG/CompressedTI2JPEG.png'
+
+    original_shape, original_dtype, original_size, original_mean, original_std = get_image_properties(inputImage)
+
 
     # Compress the image
-    compress_JPEG(inputImage, compressedImage)
+    compressedImage = compress_JPEG(inputImage, compressedImage)
+
+    compressed_shape, compressed_dtype, compressed_size, compressed_mean, compressed_std = get_image_properties(compressedImage)
 
     # Decompress the image
-    decompressedImage = 'decompressed.jpg'  # Path to save the decompressed image file
+    decompressedImage = 'Images/JPEG/DecompressedTI2JPEG.png'  # Path to save the decompressed image file
     decompress_JPEG(compressedImage, decompressedImage)
+
+
+
+    # Print comparison information
+    print("Original Image Properties:")
+    print("Dimensions:", original_shape)
+    print("Data type:", original_dtype)
+    print("File size:", original_size, "bytes")
+    print("Mean pixel value:", original_mean)
+    print("Standard deviation:", original_std)
+    print("\nCompressed Image Properties:")
+    print("Dimensions:", compressed_shape)
+    print("Data type:", compressed_dtype)
+    print("File size:", compressed_size, "bytes")
+    compression_ratio = original_size / compressed_size
+    print("Compression ratio:", compression_ratio)
+    print("Mean pixel value:", compressed_mean)
+    print("Standard deviation:", compressed_std)
 
 
 if __name__ == '__main__':
