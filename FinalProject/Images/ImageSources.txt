@@ -1,0 +1,32 @@
+
+
+
+-- True PNG Images --
+
+Colored Image 2 True PNG (CI2.png)
+https://www.freeiconspng.com/thumbs/color-icons/color-icon-png-13.png
+
+Black and White Image 2 True PNG (BW2.png)
+https://www.nicepng.com/png/full/119-1198928_pin-by-brittany-roberts-on-project-one-world.png
+
+Text Image 2 True PNG (TI2.png)
+https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo-2010-2013.png
+
+
+-- JPG Images / Faulty PNG Images --
+
+(Saved the jpg images as png images but caused compression to be faulty
+since png images were not true png)
+
+Colored Image JPG (CI.jpg)
+Colored Image PNG (CI.png)
+https://thursd.com/storage/media/53238/Water-droplets-on-a-rose-flower.jpg
+
+
+Black & White Image JPG (BW.jpg)
+Black & White PNG (BW.png)
+https://images.pexels.com/photos/57905/pexels-photo-57905.jpeg?cs=srgb&dl=pexels-jhawley-57905.jpg&fm=jpg
+
+Text Image JPG (TI.jpg)
+Text Image PNG (TI.png)
+https://www.slidecow.com/wp-content/uploads/2018/04/Setting-Up-The-Slide-Text-1000x563.jpg
