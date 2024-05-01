@@ -1,0 +1,139 @@
+The analysis of JPEG compression effects on various image types, encompassing both
+True PNG and JPG formats, provides insights into its efficacy and suitability across
+different data compositions.
+
+Beginning with True PNG images, including Black & White, Colored, and Text compositions,
+JPEG compression's impact becomes evident. For example, the Black & White PNG image
+(BW2.png), initially sized at 1280 by 1263 pixels with a file size of 155990 bytes,
+undergoes compression, resulting in a reduced size of 69955 bytes and achieving a
+compression ratio of about 2.23. However, subtle changes in mean pixel values and
+standard deviations post-compression suggest slight alterations in visual fidelity.
+Similarly, the Colored PNG image (CI2.png), initially sized at 42200 bytes, experiences
+significant reduction to 9112 bytes, indicating effective compression with a ratio of
+approximately 4.63. Notably, while this reduction is accompanied by minor fluctuations
+in pixel values and standard deviations, it still maintains acceptable image quality.
+Conversely, the Text PNG image (TI2.png), initially sized at 41168 bytes, shows less
+favorable results post-compression, with an increased file size (233805 bytes) and
+notable changes in pixel values and standard deviations, indicating JPEG compression
+may not be ideal for text-heavy images.
+
+Transitioning to JPG images, higher compression ratios compared to True PNG images are observed
+across all categories – Black & White (BW.jpg), Colored (CI.jpg), and Text (TI.jpg). This suggests
+JPEG compression is more effective with JPG images. However, its efficacy remains dependent on factors
+such as image content and intended use.
+
+In summary, JPEG compression appears to work better with JPG images, offering higher compression ratios
+and generally satisfactory preservation of visual quality. Nonetheless, its effectiveness across True
+PNG images varies, with colored images showing more favorable compression outcomes compared to text-heavy
+ones. Hence, when choosing between PNG and JPG image types, considerations such as image content, desired
+file size, and acceptable loss of quality should be carefully evaluated to determine the most suitable
+compression approach.
+
+
+* True PNG *
+- Black & White (BW2.png)
+    Original Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: uint8
+    File size: 155990 bytes
+    Mean pixel value: 139.71079770387965
+    Standard deviation: 126.6738457330651
+
+    Compressed Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: uint8
+    File size: 69955 bytes
+    Compression ratio: 2.2298620541776857
+    Mean pixel value: 119.571552108076
+    Standard deviation: 126.75970626630776
+
+- Colored Image (CI2.png)
+    Original Image Properties:
+    Dimensions: (320, 320)
+    Data type: uint8
+    File size: 42200 bytes
+    Mean pixel value: 129.27091552734376
+    Standard deviation: 116.87893459616936
+
+    Compressed Image Properties:
+    Dimensions: (320, 320)
+    Data type: uint8
+    File size: 9112 bytes
+    Compression ratio: 4.631255487269534
+    Mean pixel value: 106.68021809895833
+    Standard deviation: 110.02258703036152
+
+
+
+
+- Text Image (TI2.png)
+    Original Image Properties:
+    Dimensions: (3840, 2160)
+    Data type: uint8
+    File size: 41168 bytes
+    Mean pixel value: 0.13601671006944444
+    Standard deviation: 0.3743538794699035
+
+    Compressed Image Properties:
+    Dimensions: (3840, 2160)
+    Data type: uint8
+    File size: 233805 bytes
+    Compression ratio: 0.17607835589486964
+    Mean pixel value: 76.15280590920781
+    Standard deviation: 34.01222780688621
+
+
+
+
+* JPG *
+- Black & White (BW.jpg)
+    Original Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: uint8
+    File size: 380170 bytes
+    Mean pixel value: 76.40441471071975
+    Standard deviation: 64.48544060976845
+
+    Compressed Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: uint8
+    File size: 466452 bytes
+    Compression ratio: 0.8150249114592713
+    Mean pixel value: 76.38186693752718
+    Standard deviation: 64.51985175516522
+
+
+
+
+- Colored (CI.jpg)
+    Original Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: uint8
+    File size: 163020 bytes
+    Mean pixel value: 82.64867777777778
+    Standard deviation: 68.11042121622597
+
+    Compressed Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: uint8
+    File size: 149065 bytes
+    Compression ratio: 1.0936168785429174
+    Mean pixel value: 82.69959398148148
+    Standard deviation: 67.91574583712473
+
+
+- Text (TI.jpg)
+    Original Image Properties:
+    Dimensions: (1000, 563)
+    Data type: uint8
+    File size: 19332 bytes
+    Mean pixel value: 229.76447602131438
+    Standard deviation: 75.01429267626362
+
+    Compressed Image Properties:
+    Dimensions: (1000, 563)
+    Data type: uint8
+    File size: 18611 bytes
+    Compression ratio: 1.0387405297942078
+    Mean pixel value: 229.7717708703375
+    Standard deviation: 74.95355546133648
