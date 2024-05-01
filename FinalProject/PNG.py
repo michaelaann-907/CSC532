@@ -27,9 +27,9 @@ def png_compress(image_path, compression_level, save_path=None):
     return compression_ratio, original_size, compressed_size, original_shape, original_dtype, compressed_shape, compressed_dtype
 
 # Example usage:
-image_path = 'Images/TI2.png'
+image_path = 'Images/TestingImages/TI2.png'
 compression_level = 9  # Compression level (0-9), where 0 is no compression and 9 is maximum compression
-save_path = 'Images/CompressedTI2PNG.png'  # Specify the path where you want to save the compressed image
+save_path = 'Images/PNG/CompressedTI2PNG.png'  # Specify the path where you want to save the compressed image
 compression_ratio, original_size, compressed_size, original_shape, original_dtype, compressed_shape, compressed_dtype = png_compress(image_path, compression_level, save_path)
 
 # Print compression information
