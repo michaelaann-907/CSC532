@@ -1,1 +1,334 @@
 ** PNG Compression Results
+Just know all the True PNG Images have a 2 in the names
+
+PNG compression was tested on both PNG and JPG images to evaluate its performance
+across different file formats. When applied to true PNG files, the results indicated
+a varied outcome depending on the image content. For the black & white image (BW2.png),
+PNG compression did not achieve any reduction in file size, maintaining it at 155,990
+bytes with a compression ratio of 100.0%. This suggests limited effectiveness, likely
+due to the image's characteristics or existing optimization within the PNG format.
+In contrast, PNG compression yielded a compression ratio of 89.55% for the colored
+image (CI2.png), reducing the file size to 37,789 bytes from 42,200 bytes while
+preserving color fidelity. This demonstrates PNG's proficiency in handling images
+with smooth color gradients, such as photographs or illustrations. Similarly, for
+the text image (TI2.png), PNG compression resulted in a compression ratio exceeding
+100%, slightly increasing the file size to 44,026 bytes from 41,168 bytes. Despite
+this, PNG compression maintained text clarity while achieving modest size reduction.
+
+Comparatively, when PNG compression was applied to JPG images, the results showed similar
+trends but with notable differences. For the black & white JPG image (BW.jpg), PNG compression
+significantly increased the file size to 2,970,166 bytes from 380,170 bytes, resulting in a
+compression ratio of 781.27%. This indicates that PNG compression was less effective in reducing
+file size for this image compared to its performance on the true PNG black & white image. Similarly,
+for the colored JPG image (CI.jpg), PNG compression increased the file size to 1,504,412 bytes from
+163,020 bytes, with a compression ratio of 922.84%. While still achieving compression, the increase
+in file size was substantial compared to the true PNG colored image. Additionally, for the text JPG
+image (TI.jpg), PNG compression increased the file size to 34,224 bytes from 19,332 bytes, resulting
+in a compression ratio of 177.03%. Again, this indicates less efficient compression compared to the
+true PNG text image.
+
+Overall, PNG compression showed better performance on true PNG images compared to JPG images.
+This difference can be attributed to the inherent characteristics and optimization of the PNG
+format, which may better accommodate PNG compression algorithms. PNG compression was more effective
+in reducing file size and preserving image quality for true PNG images, especially for images with
+continuous color gradients. However, for JPG images, PNG compression still achieved compression but
+with less efficiency and sometimes even increasing the file size. These results underscore the
+importance of considering image format and content when selecting a compression method, with PNG
+compression being particularly suitable for true PNG images with continuous color gradients.
+
+
+
+
+
+
+
+Results Below
+
+
+* TRUE PNG *
+- Black & White Image (BW2.png)
+   Original Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: RGBA
+    File size: 155990 bytes
+
+   Compressed Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: RGBA
+    File size: 155990 bytes
+    Compression ratio: 100.0 %
+
+For the black & white image (BW2.png), the compression process resulted
+in a file size identical to the original image (155,990 bytes). This
+outcome suggests that PNG compression did not achieve any reduction in
+file size for this particular image, yielding a compression ratio of
+100.0%. This could be due to the nature of the image content, which may
+not contain elements conducive to compression or may already be highly
+optimized in the PNG format.
+
+
+
+
+- Colored Image (CI2.png)
+   Original Image Properties:
+    Dimensions: (320, 320)
+    Data type: RGBA
+    File size: 42200 bytes
+
+   Compressed Image Properties:
+    Dimensions: (320, 320)
+    Data type: RGBA
+    File size: 37789 bytes
+    Compression ratio: 89.54739336492891 %
+
+
+
+In the case of the colored image (CI2.png), PNG compression achieved a
+compression ratio of 89.55%, resulting in a reduced file size of 37,789
+bytes compared to the original size of 42,200 bytes. This indicates that
+PNG compression was successful in reducing the file size of the colored
+image while preserving its dimensions and color attributes.
+
+
+
+- Text Image (TI2.png)
+   Original Image Properties:
+    Dimensions: (3840, 2160)
+    Data type: P
+    File size: 41168 bytes
+
+   Compressed Image Properties:
+    Dimensions: (3840, 2160)
+    Data type: P
+    File size: 44026 bytes
+    Compression ratio: 106.94228527011272 %
+
+
+The text image (TI2.png), PNG compression resulted in a
+compression ratio of 106.94%, leading to a slightly increased
+file size of 44,026 bytes compared to the original size of 41,168
+bytes. Despite the increase in file size, the compression ratio
+exceeding 100% suggests that PNG compression may have introduced
+additional data or metadata during the compression process,
+potentially affecting the overall file size.
+
+
+
+
+
+
+
+Overall Results for PNG Compression on PNG Images
+In assessing PNG compression across varied image types, distinct patterns emerged.
+For the black & white image (BW2.png), compression yielded minimal reduction,
+maintaining the file size at 155,990 bytes with a compression ratio of 100.0%.
+This suggests limitations inherent to the image's characteristics or its existing
+PNG optimization. Conversely, for the colored image (CI2.png), PNG compression
+reduced the file size by 10.45% to 37,789 bytes from 42,200 bytes, preserving color
+fidelity. This highlights PNG's proficiency in handling images with smooth color gradients,
+like photographs or illustrations. Similarly, for the text image (TI2.png), compression
+resulted in a compression ratio exceeding 100%, slightly enlarging the file size to 44,026
+bytes from 41,168 bytes, possibly due to additional data. Despite this, PNG compression
+maintains text clarity while achieving modest size reduction. These findings underscore
+PNG compression's nuanced performance, suitable for continuous color gradient images but
+with limitations for monochromatic or text-heavy images.
+
+
+
+
+
+
+
+
+--------------------------
+
+* JPG *
+
+- Black & White Image (BW.jpg)
+   Original Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 380170 bytes
+
+   Compressed Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 2970166 bytes
+    Compression ratio: 781.2731146592314 %
+
+
+PNG compression was applied to a black and white JPG image with dimensions
+of 4272x2848 pixels and a file size of 380,170 bytes. After compression,
+the dimensions and color mode remained the same, but the file size increased
+to 2,970,166 bytes. The compression ratio for this image was 781.27%.
+
+
+--------------------------
+
+- Colored Image (CI.jpg)
+   Original Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 163020 bytes
+
+   Compressed Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 1504412 bytes
+    Compression ratio: 922.8389154704944 %
+
+
+
+PNG compression was applied to a colored JPG image with dimensions of
+1200x1200 pixels and a file size of 163,020 bytes. After compression,
+the dimensions and color mode remained the same, but the file size
+increased to 1,504,412 bytes. The compression ratio for this image was
+922.84%.
+
+
+
+
+--------------------------
+
+- Text Image (TI.jpg)
+   Original Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 19332 bytes
+
+   Compressed Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 34224 bytes
+    Compression ratio: 177.0328988206083 %
+
+
+
+PNG compression was applied to a text JPG image with dimensions of
+1000x563 pixels and a file size of 19,332 bytes. After compression,
+the dimensions and color mode remained the same, but the file size
+increased to 34,224 bytes. The compression ratio for this image was
+177.03%.
+
+
+
+
+*** Overall Results using PNG Compression on JPG File Types ***
+PNG compression preserves the size and color attributes of the original
+JPG images but might not achieve substantial compression for images
+featuring sharp edges, high contrast, or mainly black and white
+compositions. The compression effectiveness depends on the image content,
+with colored images generally achieving better compression ratios compared
+to black and white or text images. When choosing a compression method,
+it's essential to consider the image's characteristics and the desired
+compression ratio. Custom compression methods designed to match the
+distinctive attributes of the image could produce better outcomes,
+leading to higher compression ratios without compromising image quality.
+
+
+
+
+
+
+
+
+
+
+
+-----
+JPG Images Saved as PNG Images Which resulted in the JPG Images doing
+better. PNG Compression is mainly targeted for PNG image types so found
+PNG Images online and used those to get true PNG Results. This can
+be included in that the image has to be a true png filetype for png compression
+to be fully effective.
+
+
+* PNG *
+
+- Black & White Image (BW.png)
+   Original Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 380170 bytes
+
+   Compressed Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 2970166 bytes
+    Compression ratio: 781.2731146592314 %
+
+
+The original black and white image had dimensions of 4272x2848 pixels and a
+file size of 380,170 bytes. After compression using PNG, the dimensions and
+mode remained the same, but the file size increased to 2,970,166 bytes.
+The compression ratio for this image was 781.27%. PNG compression typically
+works well for colored images with areas of continuous tone, but it may not
+be the most efficient for black and white images with sharp edges and high
+contrast.
+
+
+
+--------------------------
+
+
+- Colored Image (CI.png)
+   Original Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 163020 bytes
+
+   Compressed Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 1504412 bytes
+    Compression ratio: 922.8389154704944 %
+
+The original colored image had dimensions of 1200x1200 pixels and a file
+size of 163,020 bytes. After compression using PNG, the dimensions and
+color mode remained the same, but the file size increased to 1,504,412
+bytes. The compression ratio for this image was 922.84%. PNG compression
+is generally more effective for colored images with areas of continuous
+tone compared to images with sharp edges or text.
+
+
+
+
+--------------------------
+
+- Text Image (TI.png)
+   Original Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 19332 bytes
+
+   Compressed Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 34224 bytes
+    Compression ratio: 177.0328988206083 %
+
+The original text image had dimensions of 1000x563 pixels and a file
+size of 19,332 bytes. After compression using PNG, the dimensions and
+color mode remained the same, but the file size increased to 34,224
+bytes. The compression ratio for this image was 177.03%. PNG compression
+may not be the most efficient for text images with sharp edges and high
+contrast, resulting in a relatively lower compression ratio compared to
+continuous tone images.
+
+
+*** Overall Results using PNG Compression on PNG File Types ***
+PNG compression excels at preserving the original dimensions and color
+attributes of images. However, its efficacy in reducing file size varies
+based on the image's characteristics. While it can significantly decrease
+the size of colored images with smooth gradients or continuous tones, like
+photographs or illustrations, it may not achieve the same level of
+compression for images with sharp edges, high contrast, or predominantly
+black and white compositions, such as textual or line art images. In such
+scenarios, the compression ratio attained through PNG compression might be
+comparatively lower. Hence, it's crucial to evaluate the specific attributes
+of the image content and the desired compression ratio when selecting a
+compression method. Alternative approaches, tailored to the unique features
+of the image, may provide superior outcomes in terms of achieving higher
+compression ratios while upholding image quality.
+
+
