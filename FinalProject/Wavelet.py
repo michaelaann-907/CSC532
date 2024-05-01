@@ -7,7 +7,7 @@ def wavelet_compress(image_path, compression_ratio, save_path=None):
     # Load the image
     # Need to use IMREAD_COLOR for colored images
     # Need to use IMREAD_GRAYSCALE for black & white images
-    img = cv2.imread(image_path, cv2.IMREAD_COLOR)
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
     # Perform 2D Discrete Wavelet Transform (DWT)
     coeffs = pywt.dwt2(img, 'haar')
@@ -43,9 +43,9 @@ def wavelet_compress(image_path, compression_ratio, save_path=None):
 
 
 # Example usage with save path:
-image_path = 'Images/CI.png'
+image_path = 'Images/TestingImages/TI2.png'
 compression_ratio = 90  # Retain 90% of the most significant coefficients
-save_path = 'Images/CompressedCIWavelet.png'  # Specify the path where you want to save the compressed image
+save_path = 'Images/Wavelet/CompressedTI2Wavelet.png'  # Specify the path where you want to save the compressed image
 compressed_img, compression_ratio, original_shape, original_dtype, original_size, compressed_size, \
     original_mean, compressed_mean, original_std, compressed_std = wavelet_compress(image_path, compression_ratio, save_path)
 
@@ -55,7 +55,7 @@ compressed_img, compression_ratio, original_shape, original_dtype, original_size
 # Display original and compressed images
 # Need to use IMREAD_COLOR for colored images
 # Need to use IMREAD_GRAYSCALE for black & white images
-original_img = cv2.imread(image_path, cv2.IMREAD_COLOR)
+original_img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 scale_factor = min(1.0, 800.0 / original_img.shape[1], 600.0 / original_img.shape[0])
 original_img = cv2.resize(original_img, None, fx=scale_factor, fy=scale_factor)
 cv2.imshow('Original Image', original_img)

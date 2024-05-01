@@ -1,5 +1,236 @@
 ** Wavelet Compression Results
-* PNG *
+
+Overall results
+
+In comparing the results of wavelet compression between PNG and JPG files,
+distinct differences emerge in terms of compression efficacy and impact on
+image characteristics.
+
+For the black & white images, both PNG (BW2.png) and JPG (BW.jpg)
+files underwent wavelet compression. In the case of the PNG image,
+the compression ratio was exceptionally high at 8297.56, but this resulted
+in a significant increase in file size to 12,943,360 bytes. Additionally,
+the mean pixel value and standard deviation were reduced to 0.0, indicating
+loss of detail and variance. Conversely, for the JPG image, while the compression
+ratio was also notably high at 25602.56, the increase in file size was even
+more drastic, reaching 97,333,248 bytes. Similar to the PNG image, the mean
+pixel value and standard deviation were altered, suggesting loss of detail
+and variance. However, the increase in file size for the JPG image was
+significantly higher compared to the PNG image, indicating that wavelet
+compression was more effective in preserving file size for the PNG black
+& white image.
+
+For colored images, both PNG (CI2.png) and JPG (CI.jpg) files were compressed
+using wavelet compression. In the case of the PNG image, the compression ratio
+was 7764.93, resulting in a file size of 3,276,800 bytes. The addition of an
+alpha channel slightly altered the dimensions, but the overall file size increase
+was substantial. Similarly, for the JPG image, the compression ratio was 28266.47,
+with a file size of 46,080,000 bytes. The increase in file size for the JPG image
+was notably higher compared to the PNG image. Both images experienced alterations
+in mean pixel value and standard deviation, indicating loss of detail and variance.
+However, the wavelet compression was more effective in preserving file size for the
+PNG colored image compared to the JPG colored image.
+
+For text images, both PNG (TI2.png) and JPG (TI.jpg) files underwent wavelet
+compression. In the case of the PNG image, the compression ratio was exceptionally
+high at 161181.50, resulting in a file size of 66,355,200 bytes. The dimensions
+decreased substantially, and the mean pixel value and standard deviation were greatly
+altered, suggesting loss of detail and variance. Similarly, for the JPG image, the
+compression ratio was 23339.54, with a file size of 4,512,000 bytes. While the compression
+ratio was lower compared to the PNG image, the increase in file size was significantly less.
+Both images experienced alterations in mean pixel value and standard deviation, indicating
+loss of detail and variance. However, the wavelet compression was more effective in preserving
+file size for the JPG text image compared to the PNG text image.
+
+Overall, wavelet compression demonstrated varying degrees of effectiveness across PNG and JPG
+images. While both file formats experienced significant increases in file size and loss of
+detail and variance, the impact was more pronounced for certain image types in each format.
+Wavelet compression tended to preserve file size more effectively for PNG images compared to
+JPG images, especially for black & white and colored images. However, for text images, the
+differences in compression efficacy between PNG and JPG formats were less distinct, with both
+formats experiencing considerable increases in file size and loss of detail and variance.
+Therefore, the choice between PNG and JPG for wavelet compression should consider the specific
+characteristics of the image and the desired balance between compression ratio and preservation
+of detail.
+
+
+Results Below
+--------------------------
+
+* True PNG *
+- Black & White Image (BW2.png)
+Original Image Properties:
+Dimensions: (1263, 1280)
+Data type: uint8
+File size: 155990 bytes
+Mean pixel value: 119.56945578483769
+Standard deviation: 126.96685355417836
+
+Compressed Image Properties:
+Dimensions: (600, 608)
+Data type: uint8
+File size: 12943360 bytes
+Compression ratio: 8297.55753573947
+Mean pixel value: 0.0
+Standard deviation: 0.0
+
+
+For the black & white image (BW2.png), the original image had dimensions
+of 1263x1280 pixels and a file size of 155,990 bytes. After wavelet compression,
+the dimensions decreased to 600x608 pixels, and the file size increased
+significantly to 12,943,360 bytes. The compression ratio was notably high at
+8297.56, indicating substantial data reduction but also considerable expansion
+in file size. Additionally, the mean pixel value and standard deviation were
+reduced to 0.0, suggesting loss of detail and variance.
+
+------------------------------------------
+
+- Colored Image (CI2.png)
+Original Image Properties:
+Dimensions: (320, 320, 3)
+Data type: uint8
+File size: 42200 bytes
+Mean pixel value: 106.18359700520833
+Standard deviation: 111.3291454769795
+
+Compressed Image Properties:
+Dimensions: (320, 320, 4)
+Data type: uint8
+File size: 3276800 bytes
+Compression ratio: 7764.928909952607
+Mean pixel value: 0.609575195312498
+Standard deviation: 1.9575556284026656
+
+In the case of the colored image (CI2.png), the original image had dimensions
+of 320x320 pixels with three color channels and a file size of 42,200 bytes.
+After wavelet compression, the dimensions remained the same, but an alpha
+channel was added, resulting in dimensions of 320x320x4 pixels. The file size
+increased significantly to 3,276,800 bytes, with a compression ratio of 7764.93.
+Similar to the black & white image, the mean pixel value and standard deviation
+were altered, indicating a loss of detail and variance.
+
+------------------------------------------
+
+- Text Image (TI2.png)
+Original Image Properties:
+Dimensions: (2160, 3840)
+Data type: uint8
+File size: 41168 bytes
+Mean pixel value: 83.03621069637346
+Standard deviation: 32.043054404711626
+
+Compressed Image Properties:
+Dimensions: (450, 800)
+Data type: uint8
+File size: 66355200 bytes
+Compression ratio: 161181.5001943257
+Mean pixel value: 0.09060189583333303
+Standard deviation: 1.677375050849102
+
+For the text image (TI2.png), the original image had dimensions of
+2160x3840 pixels and a file size of 41,168 bytes. After wavelet compression,
+the dimensions decreased to 450x800 pixels, and the file size increased
+substantially to 66,355,200 bytes. The compression ratio was exceptionally
+high at 161,181.50, signifying significant data reduction but also a remarkable
+increase in file size. As with the other images, the mean pixel value and
+standard deviation were greatly altered, indicating loss of detail and variance.
+
+------------------------------------------
+
+- Overall result for Wavelet compression on True PNG Images
+Overall, wavelet compression achieved high compression ratios for all images
+but at the cost of significant increases in file size and loss of detail and
+variance. While it effectively reduced data redundancy, especially in the case
+of the text image, it may not be suitable for images where preserving fine
+details and color accuracy is crucial. Additionally, the substantial increase
+in file size could limit the practical applicability of wavelet compression in
+scenarios where storage or bandwidth constraints are a concern.
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+* JPG *
+- Black & White Image (BW.jpg)
+(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
+   Original Image Properties:
+    Dimensions: (2848, 4272)
+    Data type: uint8
+    File size: 380170 bytes
+    Mean pixel value: 76.45590933120818
+    Standard deviation: 64.54784389427883
+
+   Compressed Image Properties:
+    Dimensions: (533, 800)
+    Data type: uint8
+    File size: 97333248 bytes
+    Compression ratio: 25602.558855248968
+    Mean pixel value: 1.9305168324343347
+    Standard deviation: 6.856057836107548
+
+------------------------------------------
+
+- Colored Image (CI.jpg)
+(Used cv2.IMREAD_COLOR since image is colored)
+   Original Image Properties:
+    Dimensions: (1200, 1200, 3)
+    Data type: uint8
+    File size: 163020 bytes
+    Mean pixel value: 82.64867777777778
+    Standard deviation: 68.11042121622599
+
+   Compressed Image Properties:
+    Dimensions: (600, 600, 4)
+    Data type: uint8
+    File size: 46080000 bytes
+    Compression ratio: 28266.47037173353
+    Mean pixel value: 3.466360763888889
+    Standard deviation: 11.671904581208475
+
+------------------------------------------
+
+
+- Text Image (TI.jpg)
+(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
+   Original Image Properties:
+    Dimensions: (563, 1000)
+    Data type: uint8
+    File size: 19332 bytes
+    Mean pixel value: 229.76447602131438
+    Standard deviation: 75.01429267626348
+
+   Compressed Image Properties:
+    Dimensions: (451, 800)
+    Data type: uint8
+    File size: 4512000 bytes
+    Compression ratio: 23339.540657976413
+    Mean pixel value: 0.0
+    Standard deviation: 0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+* Faulty PNG * JPG Images that were saved as PNG - not true PNG
 - Black & White Image (BW.png)
    Original Image Properties:
     Dimensions: (2848, 4272)
@@ -55,62 +286,3 @@
 
 
 
-
-
-
-
-* JPG *
-- Black & White Image (BW.jpg)
-(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
-   Original Image Properties:
-    Dimensions: (2848, 4272)
-    Data type: uint8
-    File size: 380170 bytes
-    Mean pixel value: 76.45590933120818
-    Standard deviation: 64.54784389427883
-
-   Compressed Image Properties:
-    Dimensions: (533, 800)
-    Data type: uint8
-    File size: 97333248 bytes
-    Compression ratio: 25602.558855248968
-    Mean pixel value: 1.9305168324343347
-    Standard deviation: 6.856057836107548
-
-
-- Colored Image (CI.jpg)
-(Used cv2.IMREAD_COLOR since image is colored)
-   Original Image Properties:
-    Dimensions: (1200, 1200, 3)
-    Data type: uint8
-    File size: 163020 bytes
-    Mean pixel value: 82.64867777777778
-    Standard deviation: 68.11042121622599
-
-   Compressed Image Properties:
-    Dimensions: (600, 600, 4)
-    Data type: uint8
-    File size: 46080000 bytes
-    Compression ratio: 28266.47037173353
-    Mean pixel value: 3.466360763888889
-    Standard deviation: 11.671904581208475
-
-
-
-
-- Text Image (TI.jpg)
-(Used cv2.IMREAD_GRAYSCALE since the image is black & white)
-   Original Image Properties:
-    Dimensions: (563, 1000)
-    Data type: uint8
-    File size: 19332 bytes
-    Mean pixel value: 229.76447602131438
-    Standard deviation: 75.01429267626348
-
-   Compressed Image Properties:
-    Dimensions: (451, 800)
-    Data type: uint8
-    File size: 4512000 bytes
-    Compression ratio: 23339.540657976413
-    Mean pixel value: 0.0
-    Standard deviation: 0.0
