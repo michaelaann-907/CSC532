@@ -1,0 +1,161 @@
+
+The results from testing using Huffman compression indicate varying degrees
+of effectiveness across different types of images.
+
+For black and white images, Huffman compression resulted in a reduction in
+file size with a compression ratio of approximately 0.82 for the JPEG format
+and around 2.27 for the PNG format. In terms of compression time, the JPEG
+format took approximately 4239 milliseconds, while the PNG format took about
+536 milliseconds. The decompression time was also shorter for the JPEG format
+compared to the PNG format. Huffman compression tends to perform better on black
+and white images due to their simpler color palette, resulting in more redundancy
+that can be effectively compressed.
+
+For colored images, Huffman compression also showed significant reduction in file size,
+with compression ratios of approximately 1.08 for JPEG and 4.67 for PNG. However, the
+compression and decompression times were longer compared to black and white images,
+which is expected due to the increased complexity of colored images.
+
+When it comes to text images, Huffman compression was particularly effective,
+resulting in compression ratios of approximately 1.04 for JPEG and 1.48 for PNG.
+Text images typically have a lot of repeated patterns and characters, making them
+highly compressible.
+
+In summary, Huffman compression generally performs better on simpler images with less color
+variation and more repeated patterns, such as black and white images and text images. The
+JPEG format tends to have shorter compression and decompression times compared to PNG, but
+PNG often achieves higher compression ratios, especially for images with fewer colors.
+
+
+
+- Black & White Image (BW.jpg)
+    Original Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 380170 bytes
+    Mean pixel value: 76.40441471071975
+    Standard deviation: 64.48544060976849
+    Image size: 12166656
+    Compression: 4238.982677459717 milliseconds.
+
+    Compressed Image Properties:
+    Dimensions: (4272, 2848)
+    Data type: RGB
+    File size: 463439 bytes
+    Compression ratio: 0.8203237103480717
+    Mean pixel value: 76.37202298369138
+    Standard deviation: 64.5226874154609
+    Decompression: 6469.245433807373 milliseconds.
+
+
+
+
+- Color Image (CI.jpg)
+    Original Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 163020 bytes
+    Mean pixel value: 82.64867777777778
+    Standard deviation: 68.110421216226
+    Image size: 1440000
+    Compression: 2779.672384262085 milliseconds.
+
+    Compressed Image Properties:
+    Dimensions: (1200, 1200)
+    Data type: RGB
+    File size: 150668 bytes
+    Compression ratio: 1.0819815753842887
+    Mean pixel value: 82.6902837962963
+    Standard deviation: 67.99604645330912
+    Decompression: 4573.470830917358 milliseconds.
+
+
+- Text Image (TI.jpg)
+    Original Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 19332 bytes
+    Mean pixel value: 229.76447602131438
+    Standard deviation: 75.0142926762635
+    Image size: 563000
+    Compression: 166.94259643554688 milliseconds.
+
+    Compressed Image Properties:
+    Dimensions: (1000, 563)
+    Data type: RGB
+    File size: 18559 bytes
+    Compression ratio: 1.0416509510210679
+    Mean pixel value: 229.76671936056837
+    Standard deviation: 74.96810619216846
+    Decompression: 3720.2281951904297 milliseconds.
+
+
+
+
+
+
+
+
+
+
+* True PNG *
+- Black & White Image (BW2.png)
+    Original Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: RGBA
+    File size: 155990 bytes
+    Mean pixel value: 186.28106360517287
+    Standard deviation: 143.42601060973004
+    Image size: 1616640
+    Compression: 536.4158153533936 milliseconds.
+
+    Compressed Image Properties:
+    Dimensions: (1280, 1263)
+    Data type: RGB
+    File size: 68616 bytes
+    Compression ratio: 2.273376471959893
+    Mean pixel value: 119.56961351939826
+    Standard deviation: 126.8153632420975
+    Decompression: 3860.7003688812256 milliseconds.
+
+
+- Colored Image (CI2.png)
+    Original Image Properties:
+    Dimensions: (320, 320)
+    Data type: RGBA
+    File size: 42200 bytes
+    Mean pixel value: 172.361220703125
+    Standard deviation: 129.5131518840366
+    Image size: 102400
+    Compression: 48.291683197021484 milliseconds.
+
+    Compressed Image Properties:
+    Dimensions: (320, 320)
+    Data type: RGB
+    File size: 9027 bytes
+    Compression ratio: 4.674864296000886
+    Mean pixel value: 106.52909830729166
+    Standard deviation: 110.37950195923008
+    Decompression: 4329.797267913818 milliseconds.
+
+
+- Text Image (TI2.png)
+Original Image Properties:
+Dimensions: (3840, 2160)
+Data type: P
+File size: 41168 bytes
+Mean pixel value: 0.13601671006944444
+Standard deviation: 0.3743538794699056
+Image size: 0
+Compression: 911.750316619873 milliseconds.
+Reading compressed data from: Images/TestingImages/TI2_compressed.txt
+Number of lines read: 0
+First few lines: []
+
+Compressed Image Properties:
+Dimensions: (3840, 2160)
+Data type: P
+File size: 27864 bytes
+Compression ratio: 1.4774619580821131
+Mean pixel value: 0.13010344328703705
+Standard deviation: 0.33641720724703394
